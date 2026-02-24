@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TripSaaS - Tour Management System
+
+TripSaaS is a comprehensive multi-tenant SaaS platform for tour operators, built with Next.js 15, Prisma, and Tailwind CSS.
+
+## Features
+
+- **Multi-tenancy**: Isolated data and branding for each tour operator.
+- **Booking Management**: Real-time availability, capacity enforcement, and booking workflows.
+- **Tour Management**: Create and manage tour itineraries, pricing, and media.
+- **Role-Based Access Control**: Granular permissions for Super Admin, Admin, Guide, and Customer roles.
+- **Internationalization**: Full support for multiple languages and currencies.
+
+## Tech Stack
+
+- **Framework**: Next.js 15 (App Router)
+- **Database**: PostgreSQL with Prisma ORM
+- **Styling**: Tailwind CSS v4
+- **Testing**: Vitest, React Testing Library
+- **Deployment**: Vercel
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- PostgreSQL database
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd tripsaas
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   pnpm install
+   ```
+
+3. Set up environment variables:
+   Copy `.env.example` to `.env` and fill in the required values.
+
+   ```env
+   DATABASE_URL="postgresql://..."
+   NEXTAUTH_SECRET="your-secret"
+   ```
+
+4. Initialize the database:
+   ```bash
+   npx prisma migrate dev
+   npx prisma db seed
+   ```
+
+5. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+## Testing
+
+Run the test suite with Vitest:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Run unit and integration tests
+npm test
+
+# Run tests with UI
+npm run test:ui
+
+# Check test coverage
+npm run test:coverage
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deployment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The project is configured for seamless deployment on Vercel.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Push your code to a Git repository.
+2. Import the project in Vercel.
+3. Configure environment variables in the Vercel dashboard.
+4. Deploy!
 
-## Learn More
+See `vercel.json` for specific deployment configurations including headers and cron jobs.
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `src/app`: Next.js App Router pages and layouts.
+- `src/components`: Reusable UI components.
+- `src/lib`: Utilities, database queries, and business logic.
+- `src/messages`: i18n translation files.
+- `tests`: Unit and integration tests.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT

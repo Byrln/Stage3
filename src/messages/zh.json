@@ -1,0 +1,325 @@
+{
+  "nav": {
+    "home": "首页",
+    "tours": "行程",
+    "about": "关于我们",
+    "contact": "联系我们",
+    "dashboard": "管理后台",
+    "login": "登录",
+    "register": "注册账号",
+    "logout": "退出登录"
+  },
+  "hero": {
+    "headline": "为多租户旅行社打造的预订与运营平台",
+    "subheadline": "为每个品牌快速上线独立预订站点，无需庞大工程团队。",
+    "ctaPrimary": "开始免费试用",
+    "ctaSecondary": "预约演示",
+    "trustedBy": "深受新一代旅行与户外品牌信赖"
+  },
+  "tours": {
+    "sectionTitle": "精选行程",
+    "featured": "推荐线路",
+    "duration": "行程天数",
+    "fromPrice": "起价",
+    "perPerson": "每人",
+    "viewAll": "查看全部行程",
+    "empty": "目前暂无可售行程。"
+  },
+  "booking": {
+    "sectionTitle": "预订",
+    "selectDates": "选择出行日期",
+    "guests": "出行人数",
+    "summary": "预订概要",
+    "confirm": "确认预订",
+    "successTitle": "预订已确认",
+    "successBody": "行程确认邮件和付款凭证已发送至您的邮箱。",
+    "manage": "管理我的预订"
+  },
+  "dashboard": {
+    "title": "管理后台",
+    "overview": "概览",
+    "tours": "行程管理",
+    "bookings": "预订管理",
+    "customers": "客户",
+    "analytics": "数据分析",
+    "vendors": "供应商",
+    "staff": "员工",
+    "settings": "设置",
+    "welcome": "欢迎回来，",
+    "kpiRevenue": "本月营收",
+    "kpiBookings": "进行中预订",
+    "kpiConversion": "转化率",
+    "kpiOccupancy": "平均上座率",
+    "overviewSubtitle": "今日预订、收入和行程负载的实时视图。",
+    "kpiBookingsToday": "今日预订",
+    "kpiRevenueMtd": "本月至今收入",
+    "kpiActiveTours": "活跃行程",
+    "kpiUpcomingSevenDays": "未来7天有 {count} 个团期",
+    "navOverview": "概览",
+    "navDashboard": "仪表盘",
+    "navOperations": "运营",
+    "navTours": "行程",
+    "navBookings": "预订",
+    "navCustomers": "客户",
+    "navCalendar": "日历",
+    "navManagement": "管理",
+    "navVendors": "供应商",
+    "navStaff": "员工",
+    "navReports": "报表",
+    "navSystem": "系统",
+    "navSettings": "设置",
+    "navHelp": "帮助",
+    "breadcrumbWorkspace": "工作区",
+    "breadcrumbDashboard": "仪表盘",
+    "searchPlaceholder": "搜索行程、预订、客户...",
+    "searchEmpty": "无匹配项。尝试不同的名称或预订编号。",
+    "notifications": {
+      "title": "通知",
+      "subtitle": "来自预订、支付和系统的实时事件。",
+      "markAllRead": "全部标记为已读",
+      "empty": "您已读完所有通知。",
+      "typeBooking": "新预订",
+      "typePayment": "支付",
+      "typeSystem": "系统",
+      "typeMessage": "消息"
+    },
+    "quickActions": {
+      "newBookingTitle": "新预订",
+      "newBookingDescription": "将此按钮连接到您的预订创建流程。",
+      "announcementTitle": "发送公告",
+      "announcementDescription": "从这里触发您的电子邮件或消息工作流。",
+      "newBooking": "新预订",
+      "addTour": "添加行程",
+      "sendAnnouncement": "发送公告"
+    },
+    "charts": {
+      "bookingsTrendTitle": "预订趋势",
+      "bookingsTrendSubtitle": "所选期间的每日出发团期。",
+      "revenueByDestinationTitle": "按目的地收入",
+      "revenueByDestinationSubtitle": "过去30天收入最高的行程。",
+      "exportTitle": "导出图表",
+      "exportDescription": "将其挂钩到您的分析服务中的PNG或CSV导出。",
+      "export": "导出",
+      "emptyDestination": "此期间无收入记录。",
+      "bookingsCount": "{count} 个预订"
+    },
+    "tables": {
+      "recentBookingsTitle": "最近预订",
+      "recentBookingsSubtitle": "所有渠道的最新预订。",
+      "recentBookingsEmpty": "未找到最近的预订。",
+      "customer": "客户",
+      "tour": "行程",
+      "date": "日期",
+      "seats": "座位",
+      "amount": "金额",
+      "status": "状态",
+      "actions": "操作",
+      "view": "查看",
+      "upcomingToursTitle": "即将出发的行程",
+      "upcomingToursSubtitle": "未来30天内出发。",
+      "upcomingToursEmpty": "暂无即将出发的行程。",
+      "seatsLabel": "座位",
+      "occupancyLabel": "入住率",
+      "upcomingTourDetails": "打开行程详情视图以管理此出发团期。",
+      "manage": "管理"
+    },
+    "calendar": {
+      "title": "日历",
+      "subtitle": "按时间查看行程和预订。",
+      "viewMonth": "月",
+      "viewWeek": "周",
+      "viewDay": "日",
+      "today": "今天",
+      "eventDetails": "{capacity} 个座位中已预订 {seats} 个"
+    }
+  },
+  "auth": {
+    "loginTitle": "登录到您的工作空间",
+    "registerTitle": "创建新的工作空间",
+    "email": "邮箱",
+    "password": "密码",
+    "name": "姓名",
+    "tenantName": "公司或品牌名称",
+    "rememberMe": "记住此设备",
+    "forgotPassword": "忘记密码？",
+    "submitLogin": "登录",
+    "submitRegister": "注册",
+    "noAccount": "还没有账号？",
+    "haveAccount": "已经有账号？",
+    "login": {
+      "badge": "运营工作空间",
+      "headline": "登录后台管理您的行程",
+      "subheadline": "进入租户工作空间，管理预订、客户与数据。",
+      "quote": "有了 Tripsaas，我们可以在一个后台管理多国家出发团期。",
+      "quoteAttribution": "Trips At Asia 运营负责人",
+      "tagline": "登录您的 Tripsaas 工作空间"
+    }
+  },
+  "common": {
+    "loading": "加载中",
+    "error": "发生错误",
+    "retry": "重试",
+    "save": "保存更改",
+    "cancel": "取消",
+    "delete": "删除",
+    "edit": "编辑",
+    "view": "查看",
+    "close": "关闭",
+    "status": "状态",
+    "active": "启用",
+    "inactive": "停用"
+  },
+  "errors": {
+    "required": "该字段为必填项",
+    "invalidEmail": "请输入有效的邮箱地址",
+    "minLength": "输入内容过短",
+    "server": "服务器发生异常",
+    "unauthorized": "请先登录后继续操作",
+    "forbidden": "您没有访问该资源的权限",
+    "notFound": "未找到请求的资源"
+  },
+  "emails": {
+    "bookingSubject": "您在 {tenantName} 的预订确认",
+    "bookingGreeting": "{name} 您好，",
+    "bookingBody": "感谢您选择 {tenantName}，以下是您的行程详情。",
+    "resetSubject": "重置您的 Tripsaas 密码",
+    "resetBody": "请使用以下链接设置新密码，链接 30 分钟内有效。",
+    "verifySubject": "验证您的 Tripsaas 邮箱地址",
+    "verifyBody": "请确认您的邮箱，以便开始接受线上预订。"
+  },
+  "public": {
+    "hero": {
+      "badge": "亚洲深度游专家",
+      "headline": "发现亚洲鲜为人知的奇境",
+      "subheadline": "由本地向导精心设计的小团线路，覆盖蒙古、不丹、越南等目的地。",
+      "searchTitle": "规划下一次行程",
+      "searchSubtitle": "几秒钟内即可选择日期、人数与旅行风格。",
+      "destination": "目的地",
+      "from": "出发日期",
+      "to": "返回日期",
+      "adults": "成人",
+      "children": "儿童",
+      "type": "行程类型",
+      "searchCta": "搜索行程",
+      "scrollHint": "向下滚动了解更多"
+    },
+    "destinations": {
+      "eyebrow": "标志性目的地",
+      "title": "横跨亚洲的精选目的地",
+      "subtitle": "从河流三角洲到雪山山谷，每一站都经过实地踩线与筛选。",
+      "toursLabel": "条线路",
+      "badge": "严选推荐",
+      "cta": "查看全部目的地"
+    },
+    "tours": {
+      "eyebrow": "热门行程",
+      "title": "最受欢迎的经典线路",
+      "subtitle": "兼顾转化与体验的行程，支持根据品牌风格灵活调整。",
+      "tabAll": "全部",
+      "tabAdventure": "冒险",
+      "tabCultural": "人文",
+      "reviews": "条点评",
+      "days": "天",
+      "guests": "位客人",
+      "from": "起价",
+      "perPerson": "每人",
+      "viewDetails": "查看详情",
+      "badgeBestseller": "热销"
+    },
+    "whyUs": {
+      "eyebrow": "为什么合作伙伴选择 Tripsaas",
+      "title": "与向导一起打磨出来的平台",
+      "body": "我们直接与当地运营商合作，设计既稳定可售又保留个性的线路，并为每个租户提供运营、销售与沟通的一体化工具。",
+      "guides": "真正生活在当地的专业向导。",
+      "groups": "控制团期规模，保证舒适度与体验感。",
+      "support": "为客人提供 24/7 行前与行中支持。",
+      "guarantee": "所有官网预订均享受价格透明与保障。"
+    },
+    "testimonials": {
+      "eyebrow": "真实评价",
+      "title": "来自真实客人的旅程故事",
+      "subtitle": "从沙漠星空到寺院回廊，这些行程都由使用 Tripsaas 的租户亲自承办。",
+      "prev": "上一条",
+      "next": "下一条",
+      "verified": "已核实客人"
+    },
+    "categories": {
+      "eyebrow": "旅行风格",
+      "title": "为不同客人匹配合适的行程",
+      "subtitle": "自由组合不同类别，构建符合品牌定位的产品组合。",
+      "hint": "将鼠标悬停在卡片上查看更多说明。",
+      "backLabel": "该类行程包含",
+      "toursLabel": "条线路",
+      "toursShort": "个行程",
+      "adventure": {
+        "title": "冒险",
+        "caption": "高海拔、露营与星空。",
+        "description": "适合热爱徒步与户外的客人，路线包含高海拔穿越、偏远营地与越野体验。"
+      },
+      "cultural": {
+        "title": "人文",
+        "caption": "寺庙、市集与茶馆。",
+        "description": "以寺院、市集与当地家庭为核心，慢节奏感受亚洲不同地区的生活方式。"
+      },
+      "beach": {
+        "title": "海岛度假",
+        "caption": "海湾、沙滩与日落晚餐。",
+        "description": "聚焦越南、泰国等海滨，搭配精选酒店、轻度活动与充足的自由时间。"
+      },
+      "wildlife": {
+        "title": "野生动物",
+        "caption": "雪豹、野马与珍稀鸟类。",
+        "description": "与本地保护组织合作的负责任旅行，严格控制团期规模与活动动线。"
+      },
+      "photography": {
+        "title": "摄影",
+        "caption": "蓝调寺庙与草原金光。",
+        "description": "为摄影师设计的行程，包含日出日落机位、踩点日以及熟悉拍摄节奏的协作向导。"
+      },
+      "culinary": {
+        "title": "美食",
+        "caption": "街边小摊与家常味道。",
+        "description": "围绕菜市场、街头小吃与家庭厨房展开，一路吃一路走，深入了解当地饮食文化。"
+      }
+    },
+    "map": {
+      "eyebrow": "在地图上查看产品",
+      "title": "一张图看清你的亚洲产品布局",
+      "subtitle": "每一个标记点都对应一组可售行程，可在后台灵活调整日期、价格与描述。",
+      "helper": "拖拽或缩放地图浏览不同区域，点击标记查看相关行程。",
+      "viewToursCta": "查看行程",
+      "mapLabel": "亚洲特色目的地互动地图"
+    },
+    "newsletter": {
+      "eyebrow": "掌握销售旺季节奏",
+      "title": "订阅亚洲产品与增长实战笔记",
+      "subtitle": "不定期分享目的地趋势、产品设计与营收优化思路，帮助团队更好决策。",
+      "label": "邮箱地址",
+      "placeholder": "you@example.com",
+      "cta": "订阅",
+      "submitting": "正在订阅...",
+      "disclaimer": "不会向您发送垃圾邮件，只在合适的频率推送高价值内容，可随时一键退订。",
+      "successTitle": "订阅成功",
+      "successDescription": "您将收到下一期 Tripsaas 实战笔记邮件。",
+      "errorTitle": "请检查邮箱",
+      "errorDescription": "请输入有效的邮箱地址以完成订阅。"
+    },
+    "footer": {
+      "tagline": "以您的品牌身份提供亚洲深度旅行",
+      "description": "Tripsaas 为每个租户提供稳定高效的预订站点与后台工具。",
+      "quickLinks": "快速链接",
+      "linkTours": "行程",
+      "linkDestinations": "目的地",
+      "linkAbout": "关于我们",
+      "linkContact": "联系我们",
+      "destinationsTitle": "示例目的地",
+      "contactTitle": "联系方式",
+      "contactEmail": "hello@yourbrand.example",
+      "contactPhone": "+65 0000 0000",
+      "paymentsTitle": "通过主流支付渠道安全收款",
+      "rights": "保留所有权利。",
+      "languageLabel": "语言",
+      "currencyLabel": "货币"
+    }
+  }
+}

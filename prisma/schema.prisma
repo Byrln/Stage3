@@ -1,0 +1,444 @@
+generator client {
+    provider        = "prisma-client-js"
+    previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+    provider  = "postgresql"
+    url       = env("DATABASE_URL")
+    directUrl = env("DATABASE_URL")
+}
+
+enum Plan {
+    FREE
+    BASIC
+    PRO
+    ENTERPRISE
+}
+
+enum Role {
+    SUPERADMIN
+    ADMIN
+    SALES
+    SUPPORT
+    USER
+}
+
+enum TourStatus {
+    DRAFT
+    PUBLISHED
+    ARCHIVED
+}
+
+enum BookingStatus {
+    PENDING
+    CONFIRMED
+    CANCELLED
+    REFUNDED
+    COMPLETED
+}
+
+enum VendorType {
+    HOTEL
+    TRANSPORT
+    GUIDE
+    ACTIVITY
+    RESTAURANT
+}
+
+enum NotificationType {
+    BOOKING
+    PAYMENT
+    SYSTEM
+    MESSAGE
+}
+
+enum Difficulty {
+    EASY
+    MODERATE
+    HARD
+    EXPERT
+}
+
+model Tenant {
+    id                     String    @id @default(uuid()) @db.Uuid
+    slug                   String    @unique
+    name                   String
+    domain                 String?   @unique
+    logoUrl                String?
+    coverImageUrl          String?
+    description            String?
+    plan                   Plan      @default(FREE)
+    planExpiresAt          DateTime?
+    paymentsCustomerId     String?
+    paymentsSubscriptionId String?
+    primaryColor           String?
+    accentColor            String?
+    defaultCurrency        String
+    supportedCurrencies    String[]
+    defaultLocale          String
+    supportedLocales       String[]
+    contactEmail           String
+    contactPhone           String?
+    address                String?
+    country                String?
+    socialLinks            Json?
+    settings               Json?
+    isActive               Boolean   @default(true)
+    createdAt              DateTime  @default(now())
+    updatedAt              DateTime  @updatedAt
+
+    users          User[]
+    tours          Tour[]
+    bookings       Booking[]
+    customers      Customer[]
+    vendors        Vendor[]
+    notifications  Notification[]
+    emailTemplates EmailTemplate[]
+    emailQueue     EmailQueue[]
+    auditLogs      AuditLog[]
+    reviews        Review[]
+    billingEvents  BillingEvent[]
+    customDomain   CustomDomain?
+
+    @@index([slug])
+}
+
+model CustomDomain {
+    id                String    @id @default(uuid()) @db.Uuid
+    tenantId          String    @unique @db.Uuid
+    hostname          String    @unique
+    verified          Boolean   @default(false)
+    verificationToken String?
+    verifiedAt        DateTime?
+    createdAt         DateTime  @default(now())
+    updatedAt         DateTime  @updatedAt
+
+    tenant Tenant @relation(fields: [tenantId], references: [id])
+}
+
+model BillingEvent {
+    id          String   @id @default(uuid()) @db.Uuid
+    tenantId    String   @db.Uuid
+    amountCents Int
+    currency    String
+    type        String
+    externalId  String?
+    createdAt   DateTime @default(now())
+
+    tenant Tenant @relation(fields: [tenantId], references: [id])
+}
+
+model User {
+    id             String    @id @default(uuid()) @db.Uuid
+    email          String    @unique
+    name           String?
+    avatarUrl      String?
+    tenantId       String    @db.Uuid
+    role           Role      @default(USER)
+    hashedPassword String
+    emailVerified  DateTime?
+    lastLoginAt    DateTime?
+    createdAt      DateTime  @default(now())
+    updatedAt      DateTime  @updatedAt
+
+    tenant        Tenant         @relation(fields: [tenantId], references: [id])
+    notifications Notification[]
+    assignedTours Booking[]      @relation("BookingAssignedGuide")
+    auditLogs     AuditLog[]
+    accounts      Account[]
+    sessions      Session[]
+
+    @@index([tenantId])
+}
+
+model Tour {
+    id               String     @id @default(uuid()) @db.Uuid
+    tenantId         String     @db.Uuid
+    title            String
+    slug             String
+    shortDescription String
+    description      String
+    highlights       String[]
+    inclusions       String[]
+    exclusions       String[]
+    price            Float
+    compareAtPrice   Float?
+    currency         String
+    duration         Int
+    maxGroupSize     Int?
+    minGroupSize     Int?
+    difficulty       Difficulty
+    imageUrls        String[]
+    videoUrl         String?
+    itinerary        Json[]
+    destinations     String[]
+    countries        String[]
+    categories       String[]
+    tags             String[]
+    meetingPoint     String?
+    endPoint         String?
+    availableDates   Json[]
+    status           TourStatus @default(DRAFT)
+    seoTitle         String?
+    seoDescription   String?
+    seoKeywords      String[]
+    rating           Float?
+    reviewCount      Int        @default(0)
+    createdAt        DateTime   @default(now())
+    updatedAt        DateTime   @updatedAt
+
+    tenant      Tenant       @relation(fields: [tenantId], references: [id])
+    bookings    Booking[]
+    reviews     Review[]
+    tourVendors TourVendor[]
+
+    @@unique([tenantId, slug])
+    @@index([tenantId])
+}
+
+model Booking {
+    id                    String        @id @default(uuid()) @db.Uuid
+    tenantId              String        @db.Uuid
+    tourId                String        @db.Uuid
+    customerId            String        @db.Uuid
+    bookingNumber         String        @unique
+    startDate             DateTime
+    endDate               DateTime
+    adults                Int
+    children              Int
+    infants               Int
+    totalSeats            Int
+    basePrice             Float
+    discountAmount        Float         @default(0)
+    taxAmount             Float         @default(0)
+    totalPrice            Float
+    currency              String
+    currencyRate          Float
+    extras                Json[]
+    specialRequests       String?
+    status                BookingStatus @default(PENDING)
+    paymentsPaymentId     String?
+    paymentsPaymentStatus String?
+    paymentMethod         String?
+    voucherUrl            String?
+    assignedGuideId       String?       @db.Uuid
+    internalNotes         String?
+    createdAt             DateTime      @default(now())
+    updatedAt             DateTime      @updatedAt
+    confirmedAt           DateTime?
+    cancelledAt           DateTime?
+
+    tenant        Tenant   @relation(fields: [tenantId], references: [id])
+    tour          Tour     @relation(fields: [tourId], references: [id])
+    customer      Customer @relation(fields: [customerId], references: [id])
+    assignedGuide User?    @relation("BookingAssignedGuide", fields: [assignedGuideId], references: [id])
+    reviews       Review[]
+
+    @@index([tenantId])
+    @@index([tourId])
+    @@index([customerId])
+}
+
+model Customer {
+    id                String    @id @default(uuid()) @db.Uuid
+    tenantId          String    @db.Uuid
+    email             String
+    firstName         String
+    lastName          String
+    phone             String?
+    dateOfBirth       DateTime?
+    nationality       String?
+    passportNumber    String?
+    passportExpiry    DateTime?
+    address           Json?
+    preferredLanguage String?
+    preferredCurrency String?
+    totalBookings     Int       @default(0)
+    totalSpent        Float     @default(0)
+    tags              String[]
+    notes             String?
+    marketingConsent  Boolean   @default(false)
+    createdAt         DateTime  @default(now())
+    updatedAt         DateTime  @updatedAt
+
+    tenant   Tenant    @relation(fields: [tenantId], references: [id])
+    bookings Booking[]
+    reviews  Review[]
+
+    @@unique([tenantId, email])
+    @@index([tenantId])
+}
+
+model Review {
+    id            String   @id @default(uuid()) @db.Uuid
+    tenantId      String   @db.Uuid
+    tourId        String   @db.Uuid
+    customerId    String   @db.Uuid
+    bookingId     String   @db.Uuid
+    rating        Int
+    title         String
+    body          String
+    photos        String[]
+    isVerified    Boolean  @default(false)
+    isPublished   Boolean  @default(false)
+    adminResponse String?
+    createdAt     DateTime @default(now())
+
+    tenant   Tenant   @relation(fields: [tenantId], references: [id])
+    tour     Tour     @relation(fields: [tourId], references: [id])
+    customer Customer @relation(fields: [customerId], references: [id])
+    booking  Booking  @relation(fields: [bookingId], references: [id])
+
+    @@index([tenantId])
+    @@index([tourId])
+}
+
+model Vendor {
+    id             String     @id @default(uuid()) @db.Uuid
+    tenantId       String     @db.Uuid
+    name           String
+    type           VendorType
+    email          String?
+    phone          String?
+    website        String?
+    address        String?
+    description    String?
+    rating         Float?
+    contractUrl    String?
+    contractExpiry DateTime?
+    commissionRate Float
+    notes          String?
+    isActive       Boolean    @default(true)
+    createdAt      DateTime   @default(now())
+
+    tenant      Tenant       @relation(fields: [tenantId], references: [id])
+    tourVendors TourVendor[]
+
+    @@index([tenantId])
+}
+
+model TourVendor {
+    id         String  @id @default(uuid()) @db.Uuid
+    tourId     String  @db.Uuid
+    vendorId   String  @db.Uuid
+    role       String?
+    notes      String?
+    dayNumbers Int[]
+
+    tour   Tour   @relation(fields: [tourId], references: [id])
+    vendor Vendor @relation(fields: [vendorId], references: [id])
+
+    @@index([tourId])
+    @@index([vendorId])
+}
+
+model Notification {
+    id        String           @id @default(uuid()) @db.Uuid
+    userId    String           @db.Uuid
+    tenantId  String           @db.Uuid
+    type      NotificationType
+    title     String
+    message   String
+    data      Json?
+    isRead    Boolean          @default(false)
+    createdAt DateTime         @default(now())
+
+    user   User   @relation(fields: [userId], references: [id])
+    tenant Tenant @relation(fields: [tenantId], references: [id])
+
+    @@index([tenantId])
+    @@index([userId])
+}
+
+model EmailTemplate {
+    id        String   @id @default(uuid()) @db.Uuid
+    tenantId  String   @db.Uuid
+    name      String
+    subject   String
+    htmlBody  String
+    variables String[]
+    isActive  Boolean  @default(true)
+    createdAt DateTime @default(now())
+
+    tenant Tenant @relation(fields: [tenantId], references: [id])
+
+    @@unique([tenantId, name])
+}
+
+model EmailQueue {
+    id           String    @id @default(uuid()) @db.Uuid
+    tenantId     String    @db.Uuid
+    to           String
+    subject      String
+    html         String
+    templateName String?
+    payload      Json?
+    status       String    @default("PENDING")
+    attempts     Int       @default(0)
+    nextRetry    DateTime?
+    createdAt    DateTime  @default(now())
+    updatedAt    DateTime  @updatedAt
+
+    tenant Tenant @relation(fields: [tenantId], references: [id])
+
+    @@index([tenantId])
+    @@index([status])
+}
+
+model AuditLog {
+    id        String   @id @default(uuid()) @db.Uuid
+    tenantId  String   @db.Uuid
+    userId    String?  @db.Uuid
+    action    String
+    entity    String
+    entityId  String
+    oldData   Json?
+    newData   Json?
+    ipAddress String?
+    createdAt DateTime @default(now())
+
+    tenant Tenant @relation(fields: [tenantId], references: [id])
+    user   User?  @relation(fields: [userId], references: [id])
+
+    @@index([tenantId])
+}
+
+model Account {
+    id                String  @id @default(uuid()) @db.Uuid
+    userId            String  @db.Uuid
+    type              String
+    provider          String
+    providerAccountId String
+    refresh_token     String?
+    access_token      String?
+    expires_at        Int?
+    token_type        String?
+    scope             String?
+    id_token          String?
+    session_state     String?
+
+    user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+    @@unique([provider, providerAccountId])
+    @@index([userId])
+}
+
+model Session {
+    id           String   @id @default(uuid()) @db.Uuid
+    sessionToken String   @unique
+    userId       String   @db.Uuid
+    expires      DateTime
+
+    user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+    @@index([userId])
+}
+
+model VerificationToken {
+    identifier String
+    token      String   @unique
+    expires    DateTime
+
+    @@unique([identifier, token])
+}

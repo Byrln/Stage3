@@ -1,0 +1,339 @@
+{
+  "nav": {
+    "home": "Home",
+    "tours": "Tours",
+    "about": "About",
+    "contact": "Contact",
+    "dashboard": "Dashboard",
+    "login": "Log in",
+    "register": "Create account",
+    "logout": "Log out"
+  },
+  "hero": {
+    "headline": "Travel SaaS for multi-tenant tour operators",
+    "subheadline": "Launch branded booking experiences for every market without engineering bottlenecks.",
+    "ctaPrimary": "Start free trial",
+    "ctaSecondary": "Book a demo",
+    "trustedBy": "Trusted by modern adventure brands"
+  },
+  "tours": {
+    "sectionTitle": "Signature tours",
+    "featured": "Featured trips",
+    "duration": "Duration",
+    "fromPrice": "From",
+    "perPerson": "per person",
+    "viewAll": "View all tours",
+    "empty": "No tours available yet."
+  },
+  "booking": {
+    "sectionTitle": "Booking",
+    "selectDates": "Select dates",
+    "guests": "Guests",
+    "summary": "Booking summary",
+    "confirm": "Confirm booking",
+    "successTitle": "Booking confirmed",
+    "successBody": "We have emailed your itinerary and payment receipt.",
+    "manage": "Manage bookings"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "overview": "Overview",
+    "tours": "Tours",
+    "bookings": "Bookings",
+    "customers": "Customers",
+    "analytics": "Analytics",
+    "vendors": "Vendors",
+    "staff": "Staff",
+    "settings": "Settings",
+    "welcome": "Welcome back,",
+    "kpiRevenue": "Monthly revenue",
+    "kpiBookings": "Active bookings",
+    "kpiConversion": "Conversion rate",
+    "kpiOccupancy": "Average occupancy",
+    "overviewSubtitle": "Live view of today’s bookings, revenue and tour load.",
+    "kpiBookingsToday": "Bookings today",
+    "kpiRevenueMtd": "Revenue month-to-date",
+    "kpiActiveTours": "Active tours",
+    "kpiUpcomingSevenDays": "{count} departures next 7 days",
+    "navOverview": "Overview",
+    "navDashboard": "Dashboard",
+    "navOperations": "Operations",
+    "navTours": "Tours",
+    "navBookings": "Bookings",
+    "navCustomers": "Customers",
+    "navCalendar": "Calendar",
+    "navManagement": "Management",
+    "navVendors": "Vendors",
+    "navStaff": "Staff",
+    "navReports": "Reports",
+    "navSystem": "System",
+    "navSettings": "Settings",
+    "navHelp": "Help",
+    "breadcrumbWorkspace": "Workspace",
+    "breadcrumbDashboard": "Dashboard",
+    "searchPlaceholder": "Search tours, bookings, customers…",
+    "searchEmpty": "No matches. Try a different name or booking number.",
+    "notifications": {
+      "title": "Notifications",
+      "subtitle": "Real-time events from bookings, payments and system.",
+      "markAllRead": "Mark all read",
+      "empty": "You are all caught up.",
+      "typeBooking": "New booking",
+      "typePayment": "Payment",
+      "typeSystem": "System",
+      "typeMessage": "Message"
+    },
+    "quickActions": {
+      "newBookingTitle": "New booking",
+      "newBookingDescription": "Wire this button to your booking creation flow.",
+      "announcementTitle": "Send announcement",
+      "announcementDescription": "Trigger your email or messaging workflow from here.",
+      "newBooking": "New booking",
+      "addTour": "Add tour",
+      "sendAnnouncement": "Send announcement"
+    },
+    "charts": {
+      "bookingsTrendTitle": "Bookings trend",
+      "bookingsTrendSubtitle": "Daily departures over the selected period.",
+      "revenueByDestinationTitle": "Revenue by destination",
+      "revenueByDestinationSubtitle": "Top-earning tours for the last 30 days.",
+      "exportTitle": "Export chart",
+      "exportDescription": "Hook this into PNG or CSV export in your analytics service.",
+      "export": "Export",
+      "emptyDestination": "No revenue recorded for this period.",
+      "bookingsCount": "{count} bookings"
+    },
+    "tables": {
+      "recentBookingsTitle": "Recent bookings",
+      "recentBookingsSubtitle": "Latest reservations across all channels.",
+      "recentBookingsEmpty": "No recent bookings found.",
+      "customer": "Customer",
+      "tour": "Tour",
+      "date": "Date",
+      "seats": "Seats",
+      "amount": "Amount",
+      "status": "Status",
+      "actions": "Actions",
+      "view": "View",
+      "upcomingToursTitle": "Upcoming tours",
+      "upcomingToursSubtitle": "Departures within the next 30 days.",
+      "upcomingToursEmpty": "No upcoming tours scheduled.",
+      "seatsLabel": "seats",
+      "occupancyLabel": "Occupancy",
+      "upcomingTourDetails": "Open the tour detail view to manage this departure.",
+      "manage": "Manage"
+    },
+    "calendar": {
+      "title": "Calendar",
+      "subtitle": "See tours and bookings laid out across time.",
+      "viewMonth": "Month",
+      "viewWeek": "Week",
+      "viewDay": "Day",
+      "today": "Today",
+      "eventDetails": "{seats} of {capacity} seats booked"
+    }
+  },
+  "auth": {
+    "loginTitle": "Sign in to your workspace",
+    "registerTitle": "Create a new workspace",
+    "email": "Email",
+    "password": "Password",
+    "name": "Full name",
+    "tenantName": "Company or brand name",
+    "rememberMe": "Remember this device",
+    "forgotPassword": "Forgot password?",
+    "submitLogin": "Sign in",
+    "submitRegister": "Create account",
+    "noAccount": "Do not have an account?",
+    "haveAccount": "Already have an account?",
+    "login": {
+      "badge": "Operator workspace",
+      "headline": "Sign in to manage your tours",
+      "subheadline": "Access bookings, customers and analytics for your tenant workspace.",
+      "quote": "Tripsaas lets us manage multi-country departures from one place.",
+      "quoteAttribution": "Operations lead at Trips At Asia",
+      "tagline": "Sign in to your Tripsaas workspace"
+    }
+  },
+  "common": {
+    "loading": "Loading",
+    "error": "Something went wrong",
+    "retry": "Retry",
+    "save": "Save changes",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "close": "Close",
+    "status": "Status",
+    "active": "Active",
+    "inactive": "Inactive"
+  },
+  "errors": {
+    "required": "This field is required",
+    "invalidEmail": "Enter a valid email address",
+    "minLength": "Value is too short",
+    "server": "Unexpected server error",
+    "unauthorized": "You need to sign in to continue",
+    "forbidden": "You do not have permission to access this resource",
+    "notFound": "The requested resource could not be found"
+  },
+  "emails": {
+    "bookingSubject": "Your booking with {tenantName}",
+    "bookingGreeting": "Hi {name},",
+    "bookingBody": "Thank you for booking with {tenantName}. Your trip details are below.",
+    "resetSubject": "Reset your Tripsaas password",
+    "resetBody": "Use the link below to set a new password. This link expires in 30 minutes.",
+    "verifySubject": "Verify your email for Tripsaas",
+    "verifyBody": "Confirm your email address to start accepting bookings."
+  },
+  "public": {
+    "hero": {
+      "badge": "Asia specialists",
+      "headline": "Discover Asia's hidden wonders",
+      "subheadline": "Small-group journeys crafted by local experts across Mongolia, Bhutan, Vietnam and beyond.",
+      "searchTitle": "Plan your next journey",
+      "searchSubtitle": "Fine-tune dates, group size and style in seconds.",
+      "destination": "Destination",
+      "from": "From",
+      "to": "To",
+      "adults": "Adults",
+      "children": "Children",
+      "type": "Tour type",
+      "searchCta": "Search tours",
+      "scrollHint": "Scroll to explore"
+    },
+    "destinations": {
+      "eyebrow": "Signature regions",
+      "title": "Featured destinations across Asia",
+      "subtitle": "Follow river deltas, temple valleys and mountain passes curated for immersive travel.",
+      "toursLabel": "tours",
+      "badge": "Handpicked",
+      "cta": "Explore all destinations"
+    },
+    "tours": {
+      "eyebrow": "Featured journeys",
+      "title": "Our most-loved tours",
+      "subtitle": "High-converting itineraries your guests already rave about, tuned for your brand.",
+      "tabAll": "All",
+      "tabAdventure": "Adventure",
+      "tabCultural": "Cultural",
+      "reviews": "reviews",
+      "days": "days",
+      "guests": "guests",
+      "from": "From",
+      "perPerson": "per person",
+      "viewDetails": "View details",
+      "badgeBestseller": "Bestseller"
+    },
+    "whyUs": {
+      "eyebrow": "Why partners choose Tripsaas",
+      "title": "Built with guides, not just for them",
+      "body": "We work directly with on-the-ground operators to design reliable, bookable trips that still feel one-of-a-kind. Every tenant workspace comes with tools for operations, sales and guest communication.",
+      "guides": "Expert local guides who live the places they show.",
+      "groups": "Small groups for slower travel and deeper connection.",
+      "support": "24/7 customer and on-trip support for your guests.",
+      "guarantee": "Best price guarantee across all direct bookings."
+    },
+    "testimonials": {
+      "eyebrow": "Guest stories",
+      "title": "Travelers who went and never forgot",
+      "subtitle": "From desert skies to monastery courtyards, these are real trips designed and run by tenants on Tripsaas.",
+      "prev": "Previous",
+      "next": "Next",
+      "verified": "Verified guest"
+    },
+    "categories": {
+      "eyebrow": "Travel styles",
+      "title": "Tailor the right journey for every guest",
+      "subtitle": "Mix and match categories to build a portfolio that fits your brand.",
+      "hint": "Hover a card to see what each style includes.",
+      "backLabel": "Inside this category",
+      "toursLabel": "tours",
+      "toursShort": "trips",
+      "adventure": {
+        "title": "Adventure",
+        "caption": "High passes, wild camps and starlit skies.",
+        "description": "Trekking routes, remote camps and off-road expeditions designed for active travelers who want to earn every view."
+      },
+      "cultural": {
+        "title": "Cultural",
+        "caption": "Temples, tea houses and local stories.",
+        "description": "Slow itineraries focused on monasteries, markets and family-run stays that bring Asia’s daily life to the forefront."
+      },
+      "beach": {
+        "title": "Beach",
+        "caption": "Islands, coves and sunset dinners.",
+        "description": "Coastal escapes in Vietnam, Thailand and beyond with handpicked stays, gentle activities and flexible downtime."
+      },
+      "wildlife": {
+        "title": "Wildlife",
+        "caption": "Snow leopards, wild horses and rare birds.",
+        "description": "Ethical encounters with Asia’s wildlife, built with local conservation partners and strict group-size limits."
+      },
+      "photography": {
+        "title": "Photography",
+        "caption": "Blue-hour temples and golden steppe light.",
+        "description": "Guided itineraries for photographers with sunrise access, scouting days and local fixers who understand the frame."
+      },
+      "culinary": {
+        "title": "Culinary",
+        "caption": "Steam, spice and street-side stools.",
+        "description": "Food-first journeys pairing markets, home kitchens and regional specialties with just enough walking in between."
+      }
+    },
+    "map": {
+      "eyebrow": "Map your portfolio",
+      "title": "See your guest journeys across Asia",
+      "subtitle": "Each marker represents trips your guests could be booking today, with full control over dates, pricing and content.",
+      "helper": "Zoom and drag to explore regions. Select a marker to jump into tours.",
+      "viewToursCta": "View tours",
+      "mapLabel": "Interactive map of featured Asian destinations"
+    },
+    "newsletter": {
+      "eyebrow": "Stay ahead of the season",
+      "title": "Get new itineraries and launch tips in your inbox",
+      "subtitle": "Short, practical emails about Asia product, revenue and guest experience for modern tour brands.",
+      "label": "Email address",
+      "placeholder": "you@example.com",
+      "cta": "Subscribe",
+      "submitting": "Subscribing...",
+      "disclaimer": "No spam. Just field-tested ideas a few times per month. Unsubscribe in one click.",
+      "successTitle": "Subscribed",
+      "successDescription": "You will receive the next TripSaaS field notes in your inbox.",
+      "errorTitle": "Check your email",
+      "errorDescription": "Enter a valid email to join the list."
+    },
+    "footer": {
+      "tagline": "Asia journeys powered by your brand",
+      "description": "Tripsaas gives each tenant a fast, reliable booking site plus the back-office tools to run it.",
+      "quickLinks": "Quick links",
+      "linkTours": "Tours",
+      "linkDestinations": "Destinations",
+      "linkAbout": "About",
+      "linkContact": "Contact",
+      "destinationsTitle": "Sample destinations",
+      "contactTitle": "Contact",
+      "contactEmail": "hello@yourbrand.example",
+      "contactPhone": "+65 0000 0000",
+      "paymentsTitle": "Secure payments processed via leading gateways",
+      "rights": "All rights reserved.",
+      "languageLabel": "Language",
+      "currencyLabel": "Currency"
+    }
+  },
+  "pages": {
+    "error": {
+      "title": "Something went wrong!",
+      "description": "We encountered an unexpected error. Our team has been notified.",
+      "goHome": "Go Home",
+      "tryAgain": "Try Again"
+    },
+    "notFound": {
+      "title": "Page Not Found",
+      "description": "Sorry, we couldn't find the page you're looking for.",
+      "searchPlaceholder": "Search for tours...",
+      "suggestedTours": "Popular Adventures"
+    }
+  }
+}
