@@ -109,7 +109,7 @@ export function DashboardShell(props: DashboardShellProps) {
         />
 
         <main className="flex-1 overflow-y-auto bg-bg-base p-4 sm:p-6 lg:p-8 scrollbar-thin scrollbar-thumb-border-default scrollbar-track-transparent">
-          <div className="mx-auto max-w-7xl space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
+          <div className="mx-auto container space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
             {children}
           </div>
         </main>

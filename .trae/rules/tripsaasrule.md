@@ -26,3 +26,7 @@
     - reason: sileo is a great library that makes it easy to add toast notifications to your Next.js app
 14. dark and light theme clean, soft, smooth and transition-friendly
     - reason: a clean, soft, and smooth theme with transition-friendly animations makes the user experience more enjoyable
+15. don't use mock data
+    - reason: mock data can cause false positives and make it difficult to test the actual behavior of your app
+16. use real data in testing
+    - reason: using real data in testing makes sure that the tests are accurate and reflect the actual behavior of the app

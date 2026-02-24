@@ -3,6 +3,7 @@ import {Inter, Plus_Jakarta_Sans} from "next/font/google";
 import {Toaster} from "sileo";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
+import { InvertedToaster } from "@/components/ui/inverted-toaster";
 
 const bodyFont = Inter({
   variable: "--font-body",
@@ -35,7 +36,7 @@ export default function RootLayout(props: Readonly<{children: React.ReactNode}>)
           disableTransitionOnChange
         >
           {children}
-          <Toaster position="top-right" />
+          <InvertedToaster />
         </ThemeProvider>
       </body>
     </html>

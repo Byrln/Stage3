@@ -60,9 +60,6 @@ export function DashboardOverviewClient(props: DashboardOverviewClientProps) {
             overview.kpis.revenueLastMonth) *
             100
         );
-
-  // Generate mock sparkline data based on existing trends or random variance for visual effect
-  // In a real app, this would come from specific API endpoints for each KPI
   const generateSparkline = (baseValue: number, days = 7) => {
     return Array.from({ length: days }).map((_, i) => ({
       value: Math.max(0, baseValue * (0.8 + Math.random() * 0.4)),
@@ -130,66 +127,18 @@ export function DashboardOverviewClient(props: DashboardOverviewClientProps) {
 
       {/* 3. Charts Section */}
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300 fill-mode-backwards">
-        <BookingsTrendChart data={overview.trends} />
-        
         <RevenueByDestinationChart 
           data={overview.destinationRevenue}
           currency={tenantCurrency}
           locale={locale}
         />
+        <BookingsTrendChart data={overview.trends} />
+        
+       
       </div>
 
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500 fill-mode-backwards">
+      <div className="col-span-full animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500 fill-mode-backwards">
         <RecentBookingsTable data={overview.recentBookings} />
-
-        <Card className="col-span-3 shadow-sm transition-shadow hover:shadow-md border-border-subtle bg-bg-surface">
-          <CardHeader>
-            <CardTitle>{tDashboard("tables.upcomingToursTitle")}</CardTitle>
-            <CardDescription>
-              {tDashboard("tables.upcomingToursSubtitle")}
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              {overview.upcomingTours.length === 0 && (
-                <div className="flex h-24 items-center justify-center text-sm text-muted-foreground">
-                  {tDashboard("tables.upcomingToursEmpty")}
-                </div>
-              )}
-              {overview.upcomingTours.map((tour) => {
-                const capacity = tour.capacity || 1;
-                const occupancy = Math.min(
-                  100,
-                  Math.round((tour.bookedSeats / capacity) * 100)
-                );
-
-                return (
-                  <div key={tour.id} className="flex items-center gap-4 rounded-xl border border-border-subtle bg-bg-elevated/30 p-3 transition-colors hover:bg-bg-elevated/50">
-                    <div className="flex-1 space-y-1">
-                      <p className="text-sm font-medium leading-none">
-                        {tour.title}
-                      </p>
-                      <p className="text-xs text-muted-foreground">
-                        {new Date(tour.startDate).toLocaleDateString(locale)}
-                      </p>
-                    </div>
-                    <div className="flex flex-col items-end gap-1">
-                      <div className="text-xs font-medium">
-                        {tour.bookedSeats}/{capacity}
-                      </div>
-                      <div className="h-1.5 w-16 overflow-hidden rounded-full bg-secondary">
-                        <div
-                          className="h-full bg-primary"
-                          style={{ width: `${occupancy}%` }}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );

@@ -220,7 +220,7 @@ export function RecentBookingsTable({ data }: RecentBookingsTableProps) {
 
   return (
     <Card className="col-span-4 shadow-sm border-border-subtle bg-bg-surface overflow-hidden">
-      <CardHeader className="flex flex-row items-center justify-between py-4 px-6 border-b border-border/40">
+      <CardHeader className="flex flex-row items-center justify-between py-0 px-6 border-b border-border/40">
         <div className="flex items-center gap-2">
           <CardTitle className="text-base font-semibold">
             Сүүлийн үеийн захиалгууд
